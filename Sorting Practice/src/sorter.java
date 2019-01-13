@@ -45,8 +45,33 @@ public class sorter {
 		return unsorted;
 	}
 	
+	public List<Integer> quickSort(List<Integer> unsorted){
+		recursiveQSHelper(unsorted, 0, unsorted.size()-1);
+		
+		return unsorted;
+	}
 	
+	public void recursiveQSHelper(List<Integer> unsorted, int first, int last){
+		if(first < last) {
+			int threshIndex = partitionQS(unsorted, first, last);
+			recursiveQSHelper(unsorted, first, threshIndex-1);
+			recursiveQSHelper(unsorted, threshIndex+1, last);
+		}
+	}
 	
+	//This method will organize elements based on their relation to a 'thresh' element (higher or lower), must call recursively to sort whole list
+	public int partitionQS(List<Integer> unsorted, int first, int last){
+		Integer thresh = unsorted.get(last);
+		int store = first;
+		for(int i = first; i <= last-1; i++) {
+			if(unsorted.get(i) <= thresh) {
+				swap(unsorted, i, store);
+				store++;
+			}
+		}
+		swap(unsorted, last, store);
+		return store;
+	}
 	
 	
 }

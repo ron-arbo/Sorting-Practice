@@ -15,16 +15,22 @@ public class SortingDriver {
 		sample.add(6);
 		sample.add(4);
 		
+		//To test, toggle comment on whichever blocks of code you DON'T want to test
+		
 //		sortingMachine.printList(sample);
 //		System.out.println();
 //		sortingMachine.bubbleSort(sample);
 //		sortingMachine.printList(sample);
+//		
+//		sortingMachine.printList(sample);
+//		System.out.println();
+//		sortingMachine.selectionSort(sample);
+//		sortingMachine.printList(sample);
 		
 		sortingMachine.printList(sample);
 		System.out.println();
-		sortingMachine.selectionSort(sample);
+		sortingMachine.quickSort(sample);
 		sortingMachine.printList(sample);
-		
 		
 	}
 	
